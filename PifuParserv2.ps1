@@ -90,8 +90,8 @@ $gruppe.extension.pifu_id
 $gruppe.Name
 $gruppe.sourcedid.id
 #>
-$grupper[1]
-$gruppe.grouptype[1]
+#$grupper[1]
+#$gruppe.grouptype[1]
 $gruppe.grouptype.typevalue
 $gruppe.timeframe.adminperiod
 $gruppe.url
@@ -99,5 +99,17 @@ $gruppe.url
 }
 
 $members = $pifuDocument.enterprise.membership
-$members
+
+foreach ($member in $members) {
+
+$member.'#comment'
+$member.member.idtype
+$membes.member.role
+$membes.member.sourceid
+
+$member.sourcedid.source
+$member.sourcedid.'#comment'
+
+
+}
 
