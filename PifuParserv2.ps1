@@ -101,11 +101,15 @@ $gruppe.url
 $members = $pifuDocument.enterprise.membership
 
 foreach ($member in $members) {
-
+"#################"
 "Commentar:"+$member.'#comment'
 "itdype:" +$member.member.idtype
-"Rolle:"+$membes.member.role
-"Sourcedid:"+$membes.member.sourceid
+"Rolle:"
+"Datetype:"+$member.member.role.datetime
+"Rolletype:"+$member.member.role.roletype
+"Statuse:"+$member.member.role.status
+#$member.member.role | gm
+"Sourcedid:"+$member.member.sourceid
 
 "Source:"+$member.sourcedid.source
 "Sourcedid comment:"+$member.sourcedid.'#comment'
