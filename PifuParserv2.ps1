@@ -102,8 +102,8 @@ $members = $pifuDocument.enterprise.membership
 
 foreach ($member in $members) {
 
-$member.'#comment'
-$member.member.idtype
+"Commentar"+$member.'#comment'
+"itdype+"$member.member.idtype
 $membes.member.role
 $membes.member.sourceid
 
