@@ -80,7 +80,7 @@ $pifupersonobject
 
 
 $Grupper = $pifuDocument.enterprise.group
-$Grupper | Select-Xml 
+#$Grupper | Select-Xml 
 
 foreach ($gruppe in $Grupper) {
 "################################"
