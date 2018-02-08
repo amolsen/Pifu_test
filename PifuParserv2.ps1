@@ -78,3 +78,16 @@ $pifupersonobject
 
 
 
+
+$Grupper = $pifuDocument.enterprise.group
+foreach ($gruppe in $Grupper) {
+"################################"
+#$gruppe.'#comment'
+<#$gruppe.extension.pifu_id
+$gruppe.extension.pifu_id
+$gruppe.Name
+$gruppe.sourcedid.id
+#>
+$gruppe.comments
+
+}
