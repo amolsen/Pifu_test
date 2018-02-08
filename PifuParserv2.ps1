@@ -80,6 +80,8 @@ $pifupersonobject
 
 
 $Grupper = $pifuDocument.enterprise.group
+$Grupper | Select-Xml 
+
 foreach ($gruppe in $Grupper) {
 "################################"
 #$gruppe.'#comment'
@@ -88,6 +90,14 @@ $gruppe.extension.pifu_id
 $gruppe.Name
 $gruppe.sourcedid.id
 #>
-$gruppe.comments
+$grupper[1]
+$gruppe.grouptype[1]
+$gruppe.grouptype.typevalue
+$gruppe.timeframe.adminperiod
+$gruppe.url
 
 }
+
+$members = $pifuDocument.enterprise.membership
+$members
+
