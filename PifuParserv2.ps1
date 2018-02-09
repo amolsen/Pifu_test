@@ -77,7 +77,7 @@ $pifupersonobject
 
 
 
-
+## Gruppe -> organisasjoner, organisasjonsenheter og grupper
 
 $Grupper = $pifuDocument.enterprise.group
 #$Grupper | Select-Xml 
@@ -100,37 +100,22 @@ $gruppe.url
 
 
 
-$membersship = $pifuDocument.enterprise.membership
+$membersships = $pifuDocument.enterprise.membership
 
-foreach ($member in $membersship) {
-
-$memberspso = @{
-
-comment = $member.'#comment'
-idtype = $member.idtype
-
-datetime = $member.role.datetime
-rolletype = $member.role.roletype
-rollestatus = $member.role.status
-Status = $member.role.status
-ID = $member.sourcedid.id
-#Source = $member.sourcedid.source
-
-}
-
-$membership= New-Object -TypeName psobject -Property $memberpso
+foreach ($membersship in $membersships) {
 
 
-$members = $pifuDocument.enterprise.membership.member
+#$members = $pifuDocument.enterprise.membership.member
 
-foreach ($member in $members) {
+foreach ($member in $membersship.member) {
 #$member.
 
 
-$memberpso = @{
-comment = $member.'#comment'
+$memberpso = @{    
+member = $membersship.sourcedid.id
 idtype = $member.idtype
-
+comment = $member.
+idtype = $member.idtype
 datetime = $member.role.datetime
 rolletype = $member.role.roletype
 rollestatus = $member.role.status
