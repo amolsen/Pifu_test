@@ -100,6 +100,26 @@ $gruppe.url
 
 
 
+$membersship = $pifuDocument.enterprise.membership
+
+foreach ($member in $membersship) {
+
+$memberspso = @{
+
+comment = $member.'#comment'
+idtype = $member.idtype
+
+datetime = $member.role.datetime
+rolletype = $member.role.roletype
+rollestatus = $member.role.status
+Status = $member.role.status
+ID = $member.sourcedid.id
+#Source = $member.sourcedid.source
+
+}
+
+$membership= New-Object -TypeName psobject -Property $memberpso
+
 
 $members = $pifuDocument.enterprise.membership.member
 
@@ -110,8 +130,10 @@ foreach ($member in $members) {
 $memberpso = @{
 comment = $member.'#comment'
 idtype = $member.idtype
+
 datetime = $member.role.datetime
 rolletype = $member.role.roletype
+rollestatus = $member.role.status
 Status = $member.role.status
 ID = $member.sourcedid.id
 #Source = $member.sourcedid.source
@@ -123,4 +145,4 @@ $membersobj = New-Object -TypeName psobject -Property $memberpso
 $membersobj
 }
 
-
+}
