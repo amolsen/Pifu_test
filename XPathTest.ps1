@@ -42,11 +42,15 @@ $schoolobj
 }
 
 function skoler {
+
 $skolerxph = '/enterprise/group/grouptype[scheme="pifu-ims-go-org" and typevalue[@level=2]]/ancestor::group'
 
 $return = $pifuDocument | Select-Xml $skoler
 
 return $return.Group
+
+
+
 }
 
 
