@@ -15,8 +15,9 @@ $skolexpath ='/enterprise/group/grouptype[scheme="pifu-ims-go-org" and typevalue
 $groupxpath = '/enterprise/group/relationship/sourcedid/id[.='+$s+']/ancestor::group/grouptype/typevalue[@level='+$d+']/ancestor::group'
 
 #$xpath="/enterprise/group/grouptype[@scheme='pifu-ims-go-org' and typevalue[@level=2]]/ancestor::group";
-    $xpath3="/enterprise/group/grouptype[@scheme]";
 
+    $xpath3="/enterprise/group/grouptype[@scheme]";
+<#
 $skoler = $pifuDocument  | select-xml -xpath $skolexpath
 
 
@@ -27,7 +28,9 @@ $props = @{
 name = $skole.Node.description.short
 orgnummer = $($skole.Node.extension.pifu_id | where type -Like organizationNumber| select pifu_value).pifu_value
 domain = $($skole.Node.extension.pifu_id | where type -Like domainName| select pifu_value).pifu_value
+
 }
+$skole.Node.extension.pifu_email.'#text'
 
 $schoolobj = New-Object -TypeName psobject -Property  $props
 
@@ -52,6 +55,24 @@ return $return.Group
 
 
 }
+#>
+
+
+
+foreach ($person in $personer) {
+"##"
+$person.name.fn
+"##"
+$person.comments.lang
+$person.sourcedid.source
+$person.sourcedid.id
+$person.userid
+
+}
+
+
+
+
 
 
 function testgroup {
