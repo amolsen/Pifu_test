@@ -6,7 +6,6 @@ $pifuContent = Get-Content .\Examples\PIFU-IMS_SAS_eksempel.xml -Encoding UTF8
 
 #$pifuDocument.'#comment'
 $personer = $pifuDocument.enterprise.person
-
 $pifupersonobject = @()
 
 
@@ -80,7 +79,7 @@ param([string]$s ="global_ID_org_17",
         [string]$d ="2")
 
         #//global_ID_org_17
-        #//level = 2
+        #//level = 2 
 
     $groupxpath = '/enterprise/group/relationship/sourcedid/id[.='+$s+']/ancestor::group/grouptype/typevalue[@level='+$d+']/ancestor::group'
 
